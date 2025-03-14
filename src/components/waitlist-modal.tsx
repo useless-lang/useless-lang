@@ -29,7 +29,7 @@ export function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/api/waitlist/add', {
+      const response = await fetch('https://useless-server.onrender.com/api/waitlist/add', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
