@@ -68,8 +68,7 @@ export default function Home() {
               language.
             </h1>
             <p className="text-xl text-gray-400 max-w-lg">
-              The world's first programming language designed to be completely Useless. Perfect for developers who want
-              to write code that elegantly does nothing.
+            A language that makes Solidity look complicated.
             </p>
             <div className="space-y-4">
               <Button
@@ -84,7 +83,7 @@ export default function Home() {
               <div className="text-sm text-gray-400">No installation required. It doesn't work anyway.</div>
               <div className="pt-2">
                 <code className="bg-white/5 px-4 py-2 rounded-lg text-sm text-gray-400 font-mono">
-                  $ npm install useless-lang --no-actual-functionality
+                  $ npm install useless-lang
                 </code>
               </div>
             </div>
@@ -111,7 +110,7 @@ export default function Home() {
                 <div className="ml-4 text-xs text-gray-400">token.useless</div>
               </div>
               <div className="p-4 font-mono text-sm">
-                <div className="text-blue-400">// A simple token contract in Useless</div>
+                <div className="text-blue-400">// A simple Useless token contract</div>
                 <div className="text-purple-400">contract Token {"{"}</div>
                 <div className="pl-4 text-green-400">// State variables</div>
                 <div className="pl-4 text-white">let totalSupply = 1000000;</div>

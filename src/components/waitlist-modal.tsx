@@ -19,7 +19,7 @@ export function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
 
   if (!isOpen) return null
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
     // Basic email validation
@@ -28,10 +28,27 @@ export function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
       return
     }
 
-    // In a real app, you would send this to your API
-    console.log("Submitting email:", email)
-    setSubmitted(true)
-    setError("")
+    try {
+      const response = await fetch('http://localhost:5000/api/waitlist/add', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to join waitlist');
+      }
+
+      const data = await response.json();
+      console.log(data)
+
+      setSubmitted(true)
+      setError("")
+    } catch (err) {
+      setError("Failed to join waitlist. Please try again later.")
+    }
   }
 
   return (
@@ -110,4 +127,3 @@ export function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
     </div>
   )
 }
-
